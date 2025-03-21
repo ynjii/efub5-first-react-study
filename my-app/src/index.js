@@ -4,16 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import Library from './chapter_03/Library';
+import Clock from './chapter_04/clock';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <Library />
-  </React.StrictMode>
-);
+const root = ReactDOM.createRoot(document.getElementById('root')); // React 18 방식
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+function tick() {
+  root.render(
+    <React.StrictMode>
+      <Clock />
+    </React.StrictMode>
+  );
+}
+
+setInterval(tick, 1000); // 1초마다 tick 함수 실행
+
 reportWebVitals();
